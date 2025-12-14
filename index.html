@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Kullback Test (WebAssembly)</title>
-    <link rel="stylesheet" href="https://sylvie.fyi/styles.css">
-    <script src="https://kit.fontawesome.com/081263bd39.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="kullback-container">
@@ -17,7 +16,7 @@
                 <span class="input-type-choice" onclick="inputTypeChange(this)" value="binary">binary</span>
                 <span class="input-type-choice file" onclick="inputTypeChange(this)" value="file">file</span>
             </div>
-            <textarea id="kullback-input" rows="5" cols="50" onkeyup="runKullback()" placeholder="mrrp meow"></textarea>
+            <textarea id="kullback-input" rows="5" cols="50" onkeyup="runKullback()" placeholder="ciphertext"></textarea>
             <label for="fileInput" class="file-input-label"><span class="file-label-text"><span class="file-name">choose file</span><br><span class="file-size"></span></span></label>
             <input type="file" id="fileInput">
             <div class="options-collapse closed"><i class="fas fa-caret-right options-icon"></i> options</div>
@@ -158,16 +157,16 @@
             border-color: color-mix(in srgb, var(--option-color) 80%, #ffffff 20%) !important;
         }
         .input-type-choice:nth-of-type(4n+1), .kullback-container:has(.input-type-choice:nth-of-type(4n+1).selected) {
-            --option-color: var(--accent-pink);
+            --option-color: #ff0000;
         }
         .input-type-choice:nth-of-type(4n+2), .kullback-container:has(.input-type-choice:nth-of-type(4n+2).selected) {
-            --option-color: var(--accent-purple);
+            --option-color: #00ff00;
         }
         .input-type-choice:nth-of-type(4n+3), .kullback-container:has(.input-type-choice:nth-of-type(4n+3).selected) {
-            --option-color: var(--accent-blue);
+            --option-color: #6666ff;
         }
         .input-type-choice:nth-of-type(4n+4), .kullback-container:has(.input-type-choice:nth-of-type(4n+4).selected) {
-            --option-color: var(--accent-green);
+            --option-color: #dd00dd;
         }
         .data-input-box {
             width: 100%;
@@ -206,10 +205,10 @@
             'file': null
         }
         const placeholders = {
-            'utf-8': 'mrrp meow',
-            'hex': '6d727270206d656f77',
-            'base64': 'bXJycCBtZW93',
-            'binary': '011011010111001001110010011100000010000001101101011001010110111101110111'
+            'utf-8': 'ciphertext',
+            'hex': '63697068657274657874',
+            'base64': 'Y2lwaGVydGV4dA==',
+            'binary': '01100011011010010111000001101000011001010111001001110100011001010111100001110100'
         }
         var inputType = "utf-8"
 
